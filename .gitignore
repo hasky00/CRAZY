@@ -1,0 +1,5 @@
+node_modules/
+*.log
+crazy-report.json
+dist/
+.DS_Store

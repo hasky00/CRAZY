@@ -1,0 +1,11 @@
+{
+  "name": "crazy-scan",
+  "version": "0.1.0",
+  "description": "CRAZY - Critical Response Against Zero-day Yikes. Static abnormality + dependency scanner for Python, JS/TS, Java, C/C++ and Go, tuned for finance.",
+  "type": "module",
+  "bin": { "crazy": "./src/cli.js" },
+  "files": ["src", "rules", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Hasky Labs, Copenhagen"
+}
