@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRAZY — Critical Response Against Zero-day Yikes</title>
+<meta name="description" content="Static vulnerability and abnormality scanner for Python, JavaScript/TypeScript, Java, C/C++ and Go, with a finance rule pack. Every day is zero day.">
+<style>
+:root{--bg:#0b0d12;--panel:#12151d;--line:#232836;--text:#e8eaf0;--muted:#8b92a5;--acc:#ff3b5c;--acc2:#ffd166;--ok:#4ade80}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+main{max-width:860px;margin:0 auto;padding:48px 16px 64px}
+h1{font-size:clamp(40px,9vw,88px);line-height:.95;margin:0;letter-spacing:-.04em}
+h1 span{color:var(--acc)}
+.tag{color:var(--acc2);margin:12px 0 0;font-size:14px;letter-spacing:.18em;text-transform:uppercase}
+p.lead{font-size:19px;color:var(--muted);max-width:620px;margin:24px 0 36px}
+.term{background:#000;border:1px solid var(--line);border-radius:10px;padding:18px 20px;font-size:13.5px;line-height:1.55;overflow-x:auto;white-space:pre}
+.c{color:#ff5c7a;font-weight:700}.h{color:#ff9e5c}.m{color:var(--acc2)}.d{color:#6b7280}.f{color:#d78cff}.g{color:var(--ok)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:36px 0}
+.grid div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.grid b{display:block;font-size:22px}.grid small{color:var(--muted)}
+h2{font-size:22px;margin:48px 0 12px;letter-spacing:-.02em}
+.buy{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.buy{grid-template-columns:1fr}}
+.buy a{display:block;text-decoration:none;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;transition:border-color .15s}
+.buy a:hover{border-color:var(--acc)}
+.buy strong{display:block;font-size:26px}.buy span{color:var(--muted);font-size:14px}
+.dl{margin-top:16px;background:var(--panel);border:1px dashed var(--line);border-radius:12px;padding:18px 20px}
+.dl a{color:var(--acc2)}
+code.inline{background:#000;border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+ul{padding-left:20px;color:var(--muted)}li{margin:6px 0}
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+a{color:var(--acc2)}
+</style>
+</head>
+<body>
+<main>
+<p class="tag">Every day is zero day</p>
+<h1>CRAZY<span>.</span></h1>
+<p class="tag" style="color:var(--muted)">Critical Response Against Zero-day Yikes</p>
+<p class="lead">A static abnormality and vulnerability scanner for the five biggest languages — Python, JavaScript/TypeScript, Java, C/C++ and Go — with a rule pack built for banks and finance. One command, zero dependencies, runs in your CI.</p>
+
+<div class="term"><span class="d">$</span> crazy ./my-bank-app
+
+<span class="c"> CRITICAL </span> app.py:3   <b>PY-PICKLE</b>
+           pickle deserialises untrusted data into code execution <span class="d">(CWE-502)</span>
+<span class="c"> CRITICAL </span> app.py:8   <b>FIN-CARD</b> <span class="f">[FINANCE]</span>
+           possible real card number (PAN) in source - PCI DSS violation <span class="d">(CWE-312)</span>
+<span class="c"> CRITICAL </span> server.js:1 <b>JS-JWTNONE</b>
+           JWT 'none' algorithm accepted - auth bypass <span class="d">(CWE-347)</span>
+<span class="h"> HIGH     </span> main.go:2  <b>GO-TLS</b>
+           TLS verification disabled <span class="d">(CWE-295)</span>
+<span class="m"> MEDIUM   </span> Ledger.java:3 <b>JAVA-RANDOM</b>
+           java.util.Random is not cryptographically secure <span class="d">(CWE-338)</span>
+
+<b>Dependencies:</b> 2 checked, <span class="h">8 with known vulnerabilities</span>
+  <span class="h">VULN</span>  npm lodash@4.17.15  GHSA-p6mc-m468-83gw
+
+<b>Health score:</b> <span class="c">0/100</span>  <span class="d">(619 ms)</span></div>
+
+<div class="grid">
+  <div><b>5</b><small>languages</small></div>
+  <div><b>48</b><small>rules, CWE-mapped</small></div>
+  <div><b>6</b><small>finance-specific rules</small></div>
+  <div><b>0</b><small>npm dependencies</small></div>
+  <div><b>live</b><small>OSV vulnerability DB</small></div>
+</div>
+
+<h2>What it catches</h2>
+<ul>
+  <li>Injection: SQL, shell, code (eval/pickle/deserialisation), XSS, XXE, JNDI (Log4Shell family)</li>
+  <li>Memory: strcpy/gets/sprintf, format strings, overflow-prone malloc</li>
+  <li>Crypto and TLS: disabled certificate checks, weak hashes, insecure random</li>
+  <li>Secrets: API keys, AWS keys, private keys committed in source</li>
+  <li>Finance pack: card numbers (PAN) and IBANs in code, money as float, sensitive data in logs, disabled auth/MFA/KYC flags, money-moving calls without idempotency</li>
+  <li>Dependencies: every declared package checked against osv.dev, used by Google and GitHub</li>
+</ul>
+
+<h2>Get it — $4 or sats, one-time</h2>
+<p style="color:var(--muted);margin-top:0">Free for personal use and open source. Commercial use needs a licence: one payment per developer, rule updates for a year.</p>
+<div class="buy">
+  <a href="PAYPAL_LINK" target="_blank" rel="noopener"><strong>$4</strong><span>PayPal — card or balance</span></a>
+  <a href="lightning:erna@getalby.com"><strong>sats</strong><span>Lightning — send the equivalent of $4 to <code class="inline">erna@getalby.com</code></span></a>
+</div>
+<div class="dl">
+  After paying, download: <a href="https://github.com/hasky00/CRAZY/releases/latest">crazy-0.1.0.zip</a><br>
+  Unzip, then: <code class="inline">node src/cli.js ./your-project</code> &nbsp;(Node 18+, nothing to install)<br>
+  <span style="color:var(--muted)">Or run straight from the repo: <code class="inline">npx github:hasky00/CRAZY ./your-project</code></span>
+</div>
+
+<h2>In CI</h2>
+<div class="term"><span class="d"># .github/workflows/crazy.yml</span>
+- run: npx github:hasky00/CRAZY . --fail-on=high --out=crazy-report.json</div>
+<p style="color:var(--muted)">Exit code 1 on any high or critical finding, or any known-vulnerable dependency. The build stops; the yikes never ships.</p>
+
+<footer>
+  Copyright &copy; 2026 Hasky Labs, Copenhagen. All rights reserved. Made by Hasky Labs, Copenhagen.<br>
+  <a href="https://github.com/hasky00/CRAZY">Source on GitHub</a>
+</footer>
+</main>
+</body>
+</html>
