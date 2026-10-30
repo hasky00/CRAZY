@@ -27,5 +27,11 @@ and the wider finance sector.
 
 Day zero. Folder created 2026-10-30.
 
+## Cases
+
+Real zero-day responses, one markdown file per case.
+
+- Case 001: CVE-2026-98432 on a Nostr relay host. [cases/001-cve-2026-98432-relay](cases/001-cve-2026-98432-relay/README.md)
+
 ---
 Copyright Hasky Labs, Copenhagen. All rights reserved.
