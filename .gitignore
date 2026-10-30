@@ -3,3 +3,4 @@ node_modules/
 crazy-report.json
 dist/
 .DS_Store
+.netlify/
