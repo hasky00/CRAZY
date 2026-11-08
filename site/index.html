@@ -83,19 +83,19 @@ a{color:var(--acc2)}
   <a href="lightning:erna@getalby.com"><strong>sats</strong><span>Lightning — send the equivalent of $4 to <code class="inline">erna@getalby.com</code></span></a>
 </div>
 <div class="dl">
-  After paying, download: <a href="https://github.com/hasky00/CRAZY/archive/refs/heads/main.zip">crazy-0.1.0.zip</a><br>
+  After paying, download: <a href="/crazy-0.1.0.zip">crazy-0.1.0.zip</a><br>
   Unzip, then: <code class="inline">node src/cli.js ./your-project</code> &nbsp;(Node 18+, nothing to install)<br>
-  <span style="color:var(--muted)">Or run straight from the repo: <code class="inline">npx github:hasky00/CRAZY ./your-project</code></span>
+  <span style="color:var(--muted)">Or run straight from the repo: <code class="inline">npx git+https://git.haskylabs.com/hasky00/CRAZY.git ./your-project</code></span>
 </div>
 
 <h2>In CI</h2>
 <div class="term"><span class="d"># .github/workflows/crazy.yml</span>
-- run: npx github:hasky00/CRAZY . --fail-on=high --out=crazy-report.json</div>
+- run: npx git+https://git.haskylabs.com/hasky00/CRAZY.git . --fail-on=high --out=crazy-report.json</div>
 <p style="color:var(--muted)">Exit code 1 on any high or critical finding, or any known-vulnerable dependency. The build stops; the yikes never ships.</p>
 
 <footer>
   Copyright &copy; 2026 Hasky Labs, Copenhagen. All rights reserved. Made by Hasky Labs, Copenhagen.<br>
-  <a href="https://github.com/hasky00/CRAZY">Source on GitHub</a> · v0.1.0
+  <a href="https://git.haskylabs.com/hasky00/CRAZY">Source on git.haskylabs.com</a> · v0.1.0
 </footer>
 </main>
 </body>

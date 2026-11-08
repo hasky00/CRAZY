@@ -23,9 +23,15 @@ and the wider finance sector.
 - Finance-aware: extra weight on auth, payments, ledgers, secrets and data handling.
 - Language-aware: memory-safety checks for C/C++, dependency and injection checks for the rest.
 
+## Get it
+
+- Site and download: https://crazy.haskylabs.com
+- Source: https://git.haskylabs.com/hasky00/CRAZY (self-hosted; the GitHub copy is an archived mirror)
+- Run without installing: `npx git+https://git.haskylabs.com/hasky00/CRAZY.git ./your-project`
+
 ## Status
 
-Day zero. Folder created 2026-10-30.
+v0.1.0 — first release. Folder created 2026-10-30; moved to Hasky Labs' own server 2026-11-08.
 
 ## Cases
 
